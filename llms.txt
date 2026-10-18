@@ -10,8 +10,8 @@ Scientific question: how many physical training copies are needed to supply the 
 - The verifier uses one independent source preparation. Only its classical measurement outcome reaches the learner.
 - Both learners may retain all training quantum data until that same outcome arrives.
 - Quantum-output channels may preserve quantum information into the prediction. The classical comparator allows any collective POVM and an arbitrary mixed density description, then preparation: an entanglement-breaking channel for each query.
-- Upper bounds hold for every pure stabilizer source. Converses use the full uniform stabilizer prior and imply worst-case obstructions.
-- Fidelity uses the pure-target overlap convention. A two-specimen SWAP comparison accepts with probability (1+F)/2.
+- Constructive copy upper bounds hold for every pure stabilizer source. Converses use the full uniform stabilizer prior and imply worst-case obstructions.
+- Fidelity uses the pure-target overlap convention: each branch score equals the square of Watrous's fidelity for that pure target. A two-specimen SWAP comparison accepts with probability (1+F)/2.
 
 ## Reading routes
 
@@ -24,7 +24,16 @@ Scientific question: how many physical training copies are needed to supply the 
 - Structured primary citations: references/references.bib
 - Reproduction commands, tested scope and limits: verification/README.md
 
-For the shortest theorem route, read model, synthesis, quantum_converse and classical_converse in that order. For the physical story, read README and interpretation before the proofs. For reproducing an assertion, begin with the verification guide and distinguish finite tests from analytical statements.
+## Learning entrypoints and routes
+
+The single selected educational anchor is John Watrous, The Theory of Quantum Information (Cambridge University Press, 2018). Its bibliographic record is references/RELATED_WORK.md#Watrous2018. Primary research papers remain necessary for attribution and imported ingredients; they are not additional assigned educational anchors.
+
+- learning/MILESTONES.md: exactly M01–M30, with 14 background/preliminaries and 16 narrative/innovation milestones. Each record states a central question, an understanding target, earlier dependencies, a conceptual connection and source pointers. The map is defined by the project and does not depend on a particular reader's background.
+- learning/WATROUS_BRIDGE.md: targeted source sections, notation and assumptions, conditioning, output-channel classes, the one-copy Choi calculation, moment-sector discrimination, Gram packing, synthesis and the full-prior resource frontier. The conventions section fixes fidelity and Choi normalization. The source-boundaries section identifies the project's additional stabilizer and finite-field ingredients.
+
+For the physical story, read README and science/interpretation.md, then the model and mechanism that explain the resource comparison. For self-directed study, follow M01–M30 with the Watrous bridge and the linked authoritative scientific sections. For the shortest theorem route, read science/model.md, science/synthesis.md, science/quantum_converse.md and science/classical_converse.md in that order. To reproduce a finite ingredient, begin with verification/README.md and use the documented commands and expected outputs.
+
+The scientific files contain the complete proofs. The learning map and bridge explain their dependencies and meaning. Finite checks establish their stated finite identities and implementations; the written proofs support universal and asymptotic claims.
 
 ## Claims to preserve
 

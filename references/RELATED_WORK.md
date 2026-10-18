@@ -82,9 +82,13 @@ The proposed contribution is the combined conditional-output comparison with mat
 
 The cited versions do not state this combined quantum-output versus after-query classical-description separation. That scope assessment is limited to these primary texts; it is not an exhaustive priority claim and does not cover subsequent revisions or unpublished work. The main separation is for qubits under an exact pure-stabilizer promise. Optimal additive copy constants, critical-window behavior, robustness to physical noise, and an all-prime classical-output separation are outside the stated result.
 
+## Selected educational anchor
+
+The single educational anchor is [John Watrous, *The Theory of Quantum Information* (2018)](#Watrous2018). Its treatment of states, channels, measurements, fidelity, discrimination and entanglement provides the common language for the output comparison. The [source-to-project bridge](../learning/WATROUS_BRIDGE.md) gives precise section pointers and translates the conventions; the [30-milestone map](../learning/MILESTONES.md) follows the project's scientific dependencies. Stabilizer synthesis, finite-field counting and the conditional copy laws retain their separate primary attribution above.
+
 ## Bibliographic records
 
-The anchors below match the keys in [references.bib](references.bib). Version-specific arXiv links identify the texts used for theorem numbering. Metadata were checked against the primary arXiv records on 18 October 2026.
+The anchors below match the keys in [references.bib](references.bib). Version-specific arXiv links identify the texts used for theorem numbering. Research-paper metadata were checked against the primary arXiv records, and the Watrous book against its publisher and author records, on 18 October 2026.
 
 <a id="BuGuJaffe2023"></a>
 
@@ -113,3 +117,7 @@ The anchors below match the keys in [references.bib](references.bib). Version-sp
 <a id="McGinley2024"></a>
 
 **McGinley2024.** Max McGinley. “Postselection-free learning of measurement-induced quantum dynamics.” *PRX Quantum* **5**, 020347 (2024). [DOI](https://doi.org/10.1103/PRXQuantum.5.020347). [arXiv:2310.04156v2](https://arxiv.org/abs/2310.04156v2), revised 18 July 2024.
+
+<a id="Watrous2018"></a>
+
+**Watrous2018.** John Watrous. *The Theory of Quantum Information*. Cambridge University Press (2018). [DOI](https://doi.org/10.1017/9781316848142). [Author's text and errata](https://cs.uwaterloo.ca/~watrous/TQI/). This is the selected educational anchor; the bridge identifies the author's chapter files used for section and page references.
