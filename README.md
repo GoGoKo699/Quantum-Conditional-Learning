@@ -37,6 +37,14 @@ Start with [the operational model and exact theorems](science/model.md). The con
 
 The construction uses [Bu–Gu–Jaffe's convolution](references/RELATED_WORK.md#BuGuJaffe2025); an alternative uses [Gross–Nezami–Walter's copy symmetries](references/RELATED_WORK.md#GrossNezamiWalter2021). The converse develops a conditional-output application of [Hayashi–Lu's finite quotient and completion framework](references/RELATED_WORK.md#HayashiLu2026Partial). The proposed contribution is the matched conditional-learning copy separation. These imported methods and the scope of the comparison are part of the scientific account.
 
+## Learn the project
+
+The single educational anchor is **John Watrous, *The Theory of Quantum Information* (Cambridge University Press, 2018)**. The [Watrous bridge](learning/WATROUS_BRIDGE.md) gives a targeted reading map, translates the book's notation and conventions, and connects its channel and state-discrimination framework to conditional stabilizer learning.
+
+The [30-milestone map](learning/MILESTONES.md) follows the project's scientific dependencies. Its **14 background/preliminaries milestones** join quantum states, channels, measurements, stabilizer algebra and statistical reasoning into the shared experiment. Its **16 narrative/innovation milestones** develop the exact one-copy comparison, synthesis mechanism, two converses and resulting resource frontier. Each milestone includes a central question, an understanding target, earlier dependencies, a conceptual connection and source pointers.
+
+Use the bridge alongside the milestones for self-directed study. In particular, its [convention dictionary](learning/WATROUS_BRIDGE.md#conventions) distinguishes Watrous's fidelity from the squared-overlap score used here, and fixes the Choi normalization. The bridge also identifies the stabilizer, convolution and counting ingredients supplied by the project and its primary research references. [The LLM reading guide](llms.txt) provides story, study, theorem and reproduction routes.
+
 ## Reproduce the finite checks
 
 The [verification guide](verification/README.md) specifies dependencies and expected outputs. From the repository root, run:
