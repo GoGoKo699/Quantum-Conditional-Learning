@@ -1,0 +1,33 @@
+# Quantum Conditional Learning
+
+Repository: https://github.com/GoGoKo699/Quantum-Conditional-Learning
+
+Scientific question: how many physical training copies are needed to supply the conditional output of a fixed commuting measurement on an unknown stabilizer state, and how does the cost change if the output must be prepared from a classical description?
+
+## Essential contract
+
+- N is the total source size, m is the surviving output size, n=N-m is the public measurement rank, and k counts full-state training preparations.
+- The verifier uses one independent source preparation. Only its classical measurement outcome reaches the learner.
+- Both learners may retain all training quantum data until that same outcome arrives.
+- Quantum-output channels may preserve quantum information into the prediction. The classical comparator allows any collective POVM and an arbitrary mixed density description, then preparation: an entanglement-breaking channel for each query.
+- Upper bounds hold for every pure stabilizer source. Converses use the full uniform stabilizer prior and imply worst-case obstructions.
+- Fidelity uses the pure-target overlap convention. A two-specimen SWAP comparison accepts with probability (1+F)/2.
+
+## Reading routes
+
+- Definitions, exact main theorems, quantifiers, rate consequences, and an exact one-copy comparison: science/model.md
+- Affine conditional output labels in one unknown Clifford basis, same-Clifford convolution, weight-1-mod4 selection, second-moment success and polynomial selector search: science/synthesis.md
+- Fixed-mask affine hard ensemble, Gram sectors, query translation, intersection quotient, compatible frames and full-prior quantum converse: science/quantum_converse.md
+- After-query graph-and-sign target, nuisance moment blocks, rank completion, arbitrary-density packing and full-prior classical-output converse: science/classical_converse.md
+- Rare-branch example and all source, memory, gate, output and verifier resources: science/interpretation.md
+- Imported convolution/copy-symmetry/discrimination results and exact operational comparison: references/RELATED_WORK.md
+- Structured primary citations: references/references.bib
+- Reproduction commands, tested scope and limits: verification/README.md
+
+For the shortest theorem route, read model, synthesis, quantum_converse and classical_converse in that order. For the physical story, read README and interpretation before the proofs. For reproducing an assertion, begin with the verification guide and distinguish finite tests from analytical statements.
+
+## Claims to preserve
+
+Quantum synthesis uses n+ceil(log2(1/delta))+3 copies and returns the exact requested state on a heralded event of probability at least 1-delta. The finite full-prior quantum bound is F_Q<=min(1,2^-m+2^(k-n)). For extensive m and any copy rate below one, the best after-query classical density-output fidelity tends to zero. Full stabilizer learning attains classical leading rate one. Thus at m/N->beta in (0,1), the rates are 1-beta and 1. The n=ceil(sqrt N) regime gives an unbounded copy separation.
+
+The convolution primitive and the finite quotient framework are established work. The proposed contribution is their matched conditional-learning application and copy frontier. A literature comparison does not certify absolute priority. The protocol consumes training systems; it does not promise an additional clone with the training set returned, a reusable model, an end-to-end running-time advantage, or protection against unspecified noise. No QRAM or inverse source oracle is assumed.

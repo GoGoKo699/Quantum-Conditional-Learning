@@ -1,0 +1,82 @@
+{
+  "binary_existence": {
+    "k": 6,
+    "r": 2,
+    "matrices": 4096,
+    "candidate_count": 12,
+    "counts": {
+      "success": 3817,
+      "nontrivial_selected": 450,
+      "failure": 279
+    },
+    "failure": 0.068115234375,
+    "second_moment_bound": 0.3333333333333333,
+    "all_checks_pass": true
+  },
+  "physical": [
+    {
+      "p": 2,
+      "N": 3,
+      "m": 1,
+      "k": 6,
+      "states": 1080,
+      "counts": {
+        "rank_0_total": 24,
+        "certified_success": 1029,
+        "nonpermutation_selected": 82,
+        "rank_1_total": 288,
+        "rank_2_total": 768,
+        "rank_2_failure": 46,
+        "rank_1_failure": 5
+      },
+      "max_infidelity_on_success": 1.1102230246251565e-15,
+      "all_checks_pass": true
+    },
+    {
+      "p": 3,
+      "N": 2,
+      "m": 1,
+      "k": 4,
+      "states": 360,
+      "counts": {
+        "rank_0_total": 36,
+        "certified_success": 325,
+        "nonpermutation_selected": 33,
+        "rank_1_total": 324,
+        "rank_1_failure": 35
+      },
+      "max_infidelity_on_success": 1.7763568394002505e-15,
+      "all_checks_pass": true
+    }
+  ],
+  "entangled_basis": [
+    {
+      "p": 2,
+      "k": 6,
+      "m": 2,
+      "c": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "max_statevector_error": 1.5308084989341897e-17,
+      "all_checks_pass": true
+    },
+    {
+      "p": 3,
+      "k": 4,
+      "m": 2,
+      "c": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "max_statevector_error": 4.864190610302088e-17,
+      "all_checks_pass": true
+    }
+  ]
+}
