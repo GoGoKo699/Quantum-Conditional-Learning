@@ -53,7 +53,7 @@ The [verification guide](verification/README.md) specifies dependencies and expe
 python3 verification/run_all.py
 ```
 
-The checks cover finite-field moments, quotient/frame and report transport, exact one-copy channel witnesses, and conditional synthesis on complete small stabilizer ensembles. They test concrete implementations and finite cases. The general copy laws are established by the written proofs.
+The checks cover finite-field moments, quotient/frame incidence and unsigned report-subspace containment, exact one-copy channel witnesses, and conditional synthesis on complete small stabilizer ensembles. They test concrete implementations and finite cases. The general copy laws are established by the written proofs.
 
 ## Physical scope
 
