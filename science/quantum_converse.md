@@ -101,7 +101,7 @@ b\in\mathbb F_2^m,
 where $`\mathop{\mathrm{Alt}}\nolimits _n(\mathbb F_2)`$ denotes symmetric binary matrices with zero diagonal. Define
 
 ```math
-q_A(u)=\sum_{i<j}A_{ij}u_i u_j,
+q_A(u)=\sum_{i\lt j}A_{ij}u_i u_j,
 \qquad
 |\psi_{A,a,S,b}\rangle
 =2^{-n/2}\sum_{u\in\mathbb F_2^n}
@@ -161,7 +161,7 @@ Average the tensor-power density matrix over the fixed nuisance parameters $`A,a
 ```math
 \sum_{r=1}^k X_{ri}X_{rj}
 =\sum_{r=1}^k X'_{ri}X'_{rj}
-\qquad(i<j),
+\qquad(i\lt j),
 ```
 
 and the coefficient of $`a_i`$ tests $`\sum_rX_{ri}=\sum_rX'_{ri}`$. Since $`z^2=z`$ over $`\mathbb F_2`$, these are exactly the off-diagonal and diagonal entries of the Gram equality
@@ -310,7 +310,7 @@ For $`1\le k\le n`$, the union bound gives
 \beta_{n,k}
 \le\sum_{j=0}^{k-1}2^{j-n}
 =\frac{2^k-1}{2^n}
-<2^{k-n}.
+\lt 2^{k-n}.
 ```
 
 Also $`2^{-m(n+1-k)}\le2^{k-n-1}`$ for $`m\ge1`$. Consequently, including $`k=0`$,
@@ -479,7 +479,7 @@ A state transverse to the full $`Z`$ subspace has the unique signed quadratic-ph
 |g_{\Gamma,s}\rangle
 =2^{-N'/2}\sum_{z\in\mathbb F_2^{N'}}
 i^{\sum_i\Gamma_{ii}z_i}
-(-1)^{\sum_{i<j}\Gamma_{ij}z_i z_j+s^Tz}|z\rangle,
+(-1)^{\sum_{i\lt j}\Gamma_{ij}z_i z_j+s^Tz}|z\rangle,
 \qquad
 \Gamma=\Gamma^T.
 ```
@@ -603,7 +603,7 @@ Taking expectations yields the exact identity
 \mathbb E[2^t]
 =1+\frac{2^n-1}{2^N+1}
 =M_{N,m}
-<1+2^{-m}.
+\lt 1+2^{-m}.
 }
 ```
 
@@ -631,7 +631,7 @@ Substituting the exact moment and clipping by one proves Theorems 1 and 2. Final
 
 ```math
 (1-2^{-m})M_{N,m}
-<(1-2^{-m})(1+2^{-m})<1,
+\lt (1-2^{-m})(1+2^{-m})\lt 1,
 ```
 
 which proves the simpler form in Theorem 1.
@@ -678,12 +678,12 @@ F_Q^{\mathrm{av}}
 1,\;\frac12+M_{N,1}2^{k-N}
 \right\},
 \qquad
-M_{N,1}<\frac32.
+M_{N,1}\lt \frac32.
 ```
 
 Thus a fixed positive excess over $`1/2`$ requires $`N-O(1)`$ training copies.
 
-More generally, if $`1\le m=o(N)`$ and $`k/N\to\alpha<1`$, then
+More generally, if $`1\le m=o(N)`$ and $`k/N\to\alpha\lt 1`$, then
 
 ```math
 P_{\mathrm{id}}^{\mathrm{av}}
@@ -793,7 +793,7 @@ For $`k\ge1`$,
 \beta_{n,k,p}
 \le\sum_{j=0}^{k-1}p^{j-n}
 =\frac{p^k-1}{(p-1)p^n}
-<\frac{p^{k-n}}{p-1},
+\lt \frac{p^{k-n}}{p-1},
 ```
 
 and $`p^{-m(n+1-k)}\le p^{k-n-1}`$. These give the stated affine constants. At $`k=0`$ the same coarse inequalities hold directly; at integer $`k>n`$ their right-hand sides exceed one.

@@ -62,7 +62,7 @@ The present classical comparator responds **after** the query and may describe a
 N+\left\lceil\log_2(1/\delta)\right\rceil+4
 ```
 
-copies for $`0<\delta<1/8`$, and give a matching leading lower bound. Their full-identification algorithm supplies the rate-one upper bound here: identify the source, then compute its conditional state from the public measurement and observed outcome. This imported algorithm does not itself establish the converse for the smaller conditional target.
+copies for $`0\lt \delta\lt 1/8`$, and give a matching leading lower bound. Their full-identification algorithm supplies the rate-one upper bound here: identify the source, then compute its conditional state from the public measurement and observed outcome. This imported algorithm does not itself establish the converse for the smaller conditional target.
 
 ### Limited-memory learning is a different restriction
 

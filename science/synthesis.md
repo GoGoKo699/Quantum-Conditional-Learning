@@ -143,14 +143,14 @@ where row $`i`$ of $`X`$ is $`x_i^T`$. If it is inconsistent, no valid selector 
 On an odd-weight binary vector, the identity
 
 ```math
-\sum_{i<j}c_ic_j
+\sum_{i\lt j}c_ic_j
 =\binom{\mathop{\mathrm{wt}}\nolimits (c)}2\pmod2
 ```
 
 shows that weight $`1\pmod4`$ is equivalent to
 
 ```math
-Q(c)=\sum_{i<j}c_ic_j=0.
+Q(c)=\sum_{i\lt j}c_ic_j=0.
 ```
 
 Substitution gives one quadratic Boolean polynomial $`g(z)=Q(c_0+Bz)`$. If $`g(0)=0`$, take $`z=0`$. If $`g(0)=1`$, inspect the unit vectors. If none is a root, every linear coefficient in the multilinear representation of $`g`$ vanishes. Inspect sums of two distinct unit vectors. If none is a root, every quadratic coefficient also vanishes. The polynomial is then identically one and has no root.

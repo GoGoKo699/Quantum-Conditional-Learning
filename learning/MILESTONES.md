@@ -316,7 +316,7 @@ where $`U`$ is one unknown output Clifford and $`f`$ is affine. Use $`\dim(L\cap
 
 **Central question.** How does selector existence become an efficient learner with a scored output on every run?
 
-**Understanding target.** Let row $`i`$ of $`X`$ be the observed outcome $`x_i^T`$. Solve $`X^Tc=x`$ and $`\mathbf1^Tc=1`$, then parameterize $`c=c_0+Bz`$. On odd-weight vectors, $`Q(c)=\sum_{i<j}c_ic_j=0`$ is exactly the weight-$`1\bmod4`$ condition. Explain why testing zero, unit vectors, and pairs of unit vectors finds a root of the restricted quadratic or proves it identically one. Combine this search with convolution and a maximally mixed failure output.
+**Understanding target.** Let row $`i`$ of $`X`$ be the observed outcome $`x_i^T`$. Solve $`X^Tc=x`$ and $`\mathbf1^Tc=1`$, then parameterize $`c=c_0+Bz`$. On odd-weight vectors, $`Q(c)=\sum_{i\lt j}c_ic_j=0`$ is exactly the weight-$`1\bmod4`$ condition. Explain why testing zero, unit vectors, and pairs of unit vectors finds a root of the restricted quadratic or proves it identically one. Combine this search with convolution and a maximally mixed failure output.
 
 **Dependencies and story role.** Uses [M12](#m12) and [M16](#m16)–[M18](#m18). It completes the constructive half of the quantum copy law.
 
@@ -348,7 +348,7 @@ where $`U`$ is one unknown output Clifford and $`f`$ is affine. Use $`\dim(L\cap
 
 **Dependencies and story role.** Uses [M11](#m11), [M12](#m12), and [M20](#m20). It locates the information obstruction within the hard ensemble.
 
-**Conceptual connection.** Good-sector fidelity is exactly $`2^{-m}`$ for every possible measurement or output channel. The probability of a bad sector is the row-rank failure $`\beta_{n,k}<2^{k-n}`$. Known input translations equate every fixed-query optimum while preserving the prior and late-query timing.
+**Conceptual connection.** Good-sector fidelity is exactly $`2^{-m}`$ for every possible measurement or output channel. The probability of a bad sector is the row-rank failure $`\beta_{n,k}\lt 2^{k-n}`$. Known input translations equate every fixed-query optimum while preserving the prior and late-query timing.
 
 **Source pointers.** Watrous §3.1.2 for indistinguishable ensembles, through the [bridge](WATROUS_BRIDGE.md). Project: [moment sectors](../science/quantum_converse.md#3-the-common-mask-average-and-its-moment-sectors), [full-rank fibers](../science/quantum_converse.md#4-what-a-full-row-rank-sector-reveals), [query independence and translation](../science/quantum_converse.md#5-fixed-query-independence-and-translation-symmetry).
 

@@ -68,7 +68,7 @@ e_{N,m}+3\,2^{-s}+\eta
 \right\}.
 ```
 
-In particular, $`e_{N,m}<2^{-m}`$. When no parameters satisfy the displayed conditions, this expression makes no claim beyond the bound $`F\le1`$. The constants are convenient uniform bounds; no optimal fidelity exponent or critical-window formula is asserted.
+In particular, $`e_{N,m}\lt 2^{-m}`$. When no parameters satisfy the displayed conditions, this expression makes no claim beyond the bound $`F\le1`$. The constants are convenient uniform bounds; no optimal fidelity exponent or critical-window formula is asserted.
 
 ## 3. A uniform graph ensemble and a fixed query
 
@@ -77,7 +77,7 @@ We first prove the bound for a real signed graph ensemble. Write the computation
 Let $`A`$ and $`C`$ be independent uniform zero-diagonal symmetric matrices of sizes $`n`$ and $`m`$. Let $`S\in\mathbb F_2^{n\times m}`$, $`a\in\mathbb F_2^n`$, and $`b\in\mathbb F_2^m`$ be independent and uniform. For a zero-diagonal symmetric matrix $`B`$, set
 
 ```math
-q_B(v)=\sum_{i<j}B_{ij}v_iv_j.
+q_B(v)=\sum_{i\lt j}B_{ij}v_iv_j.
 ```
 
 The source is
@@ -137,7 +137,7 @@ The remaining target character depends on
 ```math
 Q=Z^{\mathsf T}Z,\qquad
 \langle\theta,Q\rangle
-=\sum_{i<j}C_{ij}Q_{ij}+\sum_i b_iQ_{ii}.
+=\sum_{i\lt j}C_{ij}Q_{ij}+\sum_i b_iQ_{ii}.
 ```
 
 Consequently the nuisance-averaged training state, denoted $`\omega_\theta^{(k)}`$ to distinguish it from the output target, is
@@ -298,7 +298,7 @@ For $`n=0`$ the nullity is zero deterministically, so the same upper bound appli
 \Pr(\mathop{\mathrm{null}}\nolimits G\ge s)\le3\,2^{-s}.
 ```
 
-If the original learner has $`k<n`$, give it additional copies up to $`K=\max\{k,n\}`$. It can ignore them, so this can only increase its optimal fidelity. Apply the preceding argument to $`K`$ copies.
+If the original learner has $`k\lt n`$, give it additional copies up to $`K=\max\{k,n\}`$. It can ignore them, so this can only increase its optimal fidelity. Apply the preceding argument to $`K`$ copies.
 
 Call a block bad when $`\mathop{\mathrm{null}}\nolimits G\ge s`$. On every other block, the conservative inequality $`g\ge n-s`$ gives
 
@@ -424,7 +424,7 @@ For a uniform Lagrangian, every nonzero phase-space vector belongs to $`L`$ with
 \mathbb E\,2^t
 =1+\frac{2^n-1}{2^N+1},
 \qquad
-\Pr(t\ge1)\le e_{N,m}<2^{-m}.
+\Pr(t\ge1)\le e_{N,m}\lt 2^{-m}.
 ```
 
 We bound the fidelity on all $`t\ge1`$ sources by one. It remains to handle the conditional prior $`L\cap W=\{0\}`$.

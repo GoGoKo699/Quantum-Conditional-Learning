@@ -83,7 +83,7 @@ Clifford standardization permutes the full stabilizer prior. The bounds depend o
 
 ## 4. Constructive quantum upper bound
 
-**Theorem 1 — conditional synthesis.** For every pure stabilizer source, every supported query and $`0<\delta<1`$, a polynomial-time learner using
+**Theorem 1 — conditional synthesis.** For every pure stabilizer source, every supported query and $`0\lt \delta\lt 1`$, a polynomial-time learner using
 
 ```math
 k=n+\left\lceil\log_2\frac1\delta\right\rceil+3
@@ -152,7 +152,7 @@ For achievability, full stabilizer identification uses
 N+\left\lceil\log_2\frac1\delta\right\rceil+4
 ```
 
-copies with worst-case failure at most $`\delta`$, for $`0<\delta<1/8`$, by [Chang–Caro–Larocca–West, Theorem 1](../references/RELATED_WORK.md#ChangCaroLaroccaWest2026). Its tableau determines the branch target after $`x`$, which can then be described and prepared. Thus the classical-output leading rate is attained.
+copies with worst-case failure at most $`\delta`$, for $`0\lt \delta\lt 1/8`$, by [Chang–Caro–Larocca–West, Theorem 1](../references/RELATED_WORK.md#ChangCaroLaroccaWest2026). Its tableau determines the branch target after $`x`$, which can then be described and prepared. Thus the classical-output leading rate is attained.
 
 ## 7. Resulting copy frontier
 

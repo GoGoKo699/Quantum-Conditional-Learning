@@ -29,7 +29,7 @@ For every pure stabilizer source and every supported test outcome, the quantum c
 k=n+\left\lceil\log_2\frac1\delta\right\rceil+3
 ```
 
-training copies and succeeds with probability at least $`1-\delta`$, for $`0<\delta<1`$. Success is heralded by a classical calculation, and the output on success is exactly $`\rho_x`$. Returning the maximally mixed state on failure gives
+training copies and succeeds with probability at least $`1-\delta`$, for $`0\lt \delta\lt 1`$. Success is heralded by a classical calculation, and the output on success is exactly $`\rho_x`$. Returning the maximally mixed state on failure gives
 
 ```math
 F_\rho\ge1-\delta(1-2^{-m}).
@@ -52,7 +52,7 @@ m\ge\beta_0N,\quad k\le(1-\epsilon)N
 F_{\mathrm{EB}}^{\mathrm{av}}(N,m,k)\longrightarrow0.
 ```
 
-A matching leading upper bound follows by learning the full source and calculating its conditional state. [Chang–Caro–Larocca–West](../references/RELATED_WORK.md#ChangCaroLaroccaWest2026) give full stabilizer identification from $`N+\lceil\log_2(1/\delta)\rceil+4`$ copies for $`0<\delta<1/8`$.
+A matching leading upper bound follows by learning the full source and calculating its conditional state. [Chang–Caro–Larocca–West](../references/RELATED_WORK.md#ChangCaroLaroccaWest2026) give full stabilizer identification from $`N+\lceil\log_2(1/\delta)\rceil+4`$ copies for $`0\lt \delta\lt 1/8`$.
 
 The resulting rates are:
 
@@ -80,7 +80,7 @@ The conditioning record itself also grows. For a uniform stabilizer source, let 
 
 ```math
 \Pr(L\cap W\ne\{0\})
-\le\frac{2^n-1}{2^N+1}<2^{-m}.
+\le\frac{2^n-1}{2^N+1}\lt 2^{-m}.
 ```
 
 When the intersection is zero, all $`2^n`$ measurement outcomes occur uniformly. A designated outcome then has probability $`2^{-n}`$. Repeatedly measuring fresh training copies until that outcome appears takes $`2^n`$ preparations on average.
