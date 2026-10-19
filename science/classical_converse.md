@@ -9,7 +9,7 @@ The learner may retain all training systems until $`x`$ arrives and then perform
 Let $`F_{\mathrm{EB}}^{\mathrm{av}}(N,m,k)`$ be the supremum of
 
 ```math
-F=\mathbb E_{\rho,x,\mathrm{learner}}\operatorname{Tr}(\sigma\rho_x)
+F=\mathbb E_{\rho,x,\mathrm{learner}}\mathop{\mathrm{Tr}}\nolimits (\sigma\rho_x)
 ```
 
 over these learners, with the source uniform over all pure $`N`$-qubit stabilizer states. The fixed public measurement is suppressed in this notation; Clifford standardization makes its rank the relevant parameter. The timing and source access are those of the [model](model.md).
@@ -177,7 +177,7 @@ Let $`P_{\mathrm{id}}^*(G,H)`$ be the optimal probability of identifying the ful
 ```math
 P_{\mathrm{id}}^*(G,H)
 \le
-\frac{1}{M_m}\sum_\theta\operatorname{Tr}(E_\theta I_{\mathrm{supp}})
+\frac{1}{M_m}\sum_\theta\mathop{\mathrm{Tr}}\nolimits (E_\theta I_{\mathrm{supp}})
 =\frac{d_{G,H}}{M_m},
 ```
 
@@ -187,7 +187,7 @@ Because the ensemble is block diagonal, a learner can first read $`(G,H)`$ witho
 
 ## 5. Rank completion and the number of possible target characters
 
-Let $`g=\operatorname{rank}G`$. Choose a change of input coordinates putting $`G`$ by congruence into the form $`\operatorname{diag}(G_1,0)`$, where $`G_1`$ is a nonsingular $`g\times g`$ matrix. In these coordinates write $`H=(H_1^{\mathsf T},H_0^{\mathsf T})^{\mathsf T}`$.
+Let $`g=\mathop{\mathrm{rank}}\nolimits G`$. Choose a change of input coordinates putting $`G`$ by congruence into the form $`\mathop{\mathrm{diag}}\nolimits (G_1,0)`$, where $`G_1`$ is a nonsingular $`g\times g`$ matrix. In these coordinates write $`H=(H_1^{\mathsf T},H_0^{\mathsf T})^{\mathsf T}`$.
 
 For each tuple in the block,
 
@@ -212,7 +212,7 @@ Q_0=H_1^{\mathsf T}G_1^{-1}H_1,
 of rank at most $`k-g`$. Its principal submatrix $`Q-Q_0`$ therefore satisfies
 
 ```math
-\operatorname{rank}(Q-Q_0)\le k-g.
+\mathop{\mathrm{rank}}\nolimits (Q-Q_0)\le k-g.
 ```
 
 This argument allows $`H_0\ne0`$. It does not require $`H`$ to lie in the column space of $`G`$, nor does it require $`X`$ or $`G`$ to have full rank.
@@ -254,7 +254,7 @@ B_m(R)\le
 4(R+1)\,2^{R(2m-R+1)/2}.
 ```
 
-Every attainable $`Q`$ lies in the single known translate $`Q_0+\{B:\operatorname{rank}B\le k-g\}`$. Thus, when $`R=k-g\le m`$,
+Every attainable $`Q`$ lies in the single known translate $`Q_0+\{B:\mathop{\mathrm{rank}}\nolimits B\le k-g\}`$. Thus, when $`R=k-g\le m`$,
 
 ```math
 P_{\mathrm{id}}^*(G,H)
@@ -282,7 +282,7 @@ Assume first $`k\ge n\ge1`$. For a fixed nonzero $`v\in\mathbb F_2^n`$, an inver
 Counting vectors in the kernel yields the exact first moment
 
 ```math
-\mathbb E\,2^{\operatorname{null}G}
+\mathbb E\,2^{\mathop{\mathrm{null}}\nolimits G}
 =
 1+(2^n-1)
 \left[
@@ -295,12 +295,12 @@ Counting vectors in the kernel yields the exact first moment
 For $`n=0`$ the nullity is zero deterministically, so the same upper bound applies. Markov's inequality gives, for every integer $`s\ge1`$,
 
 ```math
-\Pr(\operatorname{null}G\ge s)\le3\,2^{-s}.
+\Pr(\mathop{\mathrm{null}}\nolimits G\ge s)\le3\,2^{-s}.
 ```
 
 If the original learner has $`k<n`$, give it additional copies up to $`K=\max\{k,n\}`$. It can ignore them, so this can only increase its optimal fidelity. Apply the preceding argument to $`K`$ copies.
 
-Call a block bad when $`\operatorname{null}G\ge s`$. On every other block, the conservative inequality $`g\ge n-s`$ gives
+Call a block bad when $`\mathop{\mathrm{null}}\nolimits G\ge s`$. On every other block, the conservative inequality $`g\ge n-s`$ gives
 
 ```math
 R=K-g\le K-n+s,\qquad
@@ -324,15 +324,15 @@ For any density matrix $`\sigma`$ on the output, define its high-overlap target 
 
 ```math
 \mathcal H_\sigma
-=\{\theta:\operatorname{Tr}(\sigma\tau_\theta)\ge\eta\}.
+=\{\theta:\mathop{\mathrm{Tr}}\nolimits (\sigma\tau_\theta)\ge\eta\}.
 ```
 
 Two graph targets have squared overlap
 
 ```math
-\operatorname{Tr}(\tau_{C,b}\tau_{C',b'})
+\mathop{\mathrm{Tr}}\nolimits (\tau_{C,b}\tau_{C',b'})
 \in
-\left\{0,\;2^{-\operatorname{rank}(C-C')}\right\}.
+\left\{0,\;2^{-\mathop{\mathrm{rank}}\nolimits (C-C')}\right\}.
 ```
 
 One direct derivation squares the binary quadratic Gauss sum for the overlap. After summing over one coordinate vector, only shifts in $`\ker(C-C')`$ survive. On this kernel the remaining quadratic expression is linear, so its sum is either zero or the size of the kernel.
@@ -354,7 +354,7 @@ This is the row-sum bound on the Gram matrix; the nonzero eigenvalues agree with
 
 ```math
 L\eta
-\le\operatorname{Tr}\!\left(\sigma\sum_{j=1}^L\tau_{\theta_j}\right)
+\le\mathop{\mathrm{Tr}}\nolimits \!\left(\sigma\sum_{j=1}^L\tau_{\theta_j}\right)
 \le1+(L-1)\varepsilon_D.
 ```
 

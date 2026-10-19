@@ -15,7 +15,7 @@ For $`x\in\mathbb F_2^n`$, define
 ```math
 J_x=(\langle x|_A\otimes I_B)C_W,
 \qquad
-p_\rho(x)=\operatorname{Tr}(J_x\rho J_x^\dagger).
+p_\rho(x)=\mathop{\mathrm{Tr}}\nolimits (J_x\rho J_x^\dagger).
 ```
 
 For supported outcomes, the conditional target is
@@ -48,7 +48,7 @@ It may use classical randomness, ancillas, adaptive measurements and coherent op
 The second class may also retain all training copies until $`x`$ and perform an arbitrary collective POVM. Its output is prepared using only the classical result of that measurement. Its channel has the form
 
 ```math
-\Lambda_x(A)=\int\operatorname{Tr}[E_x(dy)A]\,\sigma_{x,y},
+\Lambda_x(A)=\int\mathop{\mathrm{Tr}}\nolimits [E_x(dy)A]\,\sigma_{x,y},
 \qquad
 \int E_x(dy)=I.
 ```
@@ -64,7 +64,7 @@ For a fixed source and learner, the score is
 ```math
 F_\rho(\Lambda)
 =\sum_xp_\rho(x)
-\operatorname{Tr}\!\left[\rho_x\Lambda_x(\rho^{\otimes k})\right].
+\mathop{\mathrm{Tr}}\nolimits \!\left[\rho_x\Lambda_x(\rho^{\otimes k})\right].
 ```
 
 Because the target is pure, this overlap is the usual squared-fidelity convention. The score includes all branches, including a learner's declared failures. An abstention is not counted as success.
@@ -165,7 +165,7 @@ For $`m/N\to\beta\in(0,1)`$, the leading copies per source qubit are
 
 Vanishing error is achievable at these rates by taking $`\delta_N\to0`$ with $`\log(1/\delta_N)=o(N)`$. Below the respective rates, the average fidelity tends to zero. The finite quantum statement is more informative when $`n=o(N)`$: for $`n=\lceil\sqrt N\rceil`$, it gives $`\sqrt N+O(\log(1/\delta))`$ copies, while Theorem 3 still requires $`N-o(N)`$ copies for any constant classical-output fidelity.
 
-If $`m=o(N)`$, then $`n=N-o(N)`$ and there is no leading-rate reduction for quantum output. A fixed nonempty output still requires the full leading rate for fidelity above the random-state baseline. The project therefore separates the physical size of the measured subsystem from the information required for a classical description of the conditional target.
+If $`m=o(N)`$, then $`n=N-o(N)`$ and there is no leading-rate reduction for quantum output at a fixed positive fidelity advantage above the random-state baseline. In particular, a fixed nonempty output still requires the full leading rate when that advantage is bounded below independently of $`N`$. A positive but vanishing advantage need not require this rate. The project therefore separates the physical size of the measured subsystem from the information required for a classical description of the conditional target.
 
 ## 8. Physical verification convention
 
@@ -198,7 +198,7 @@ Here is a direct proof, including the second-moment identity it uses. Expand a s
 =\frac{I+S}{D(D+1)}.
 ```
 
-Work in the standardized public basis and let $`C_x`$ be the unnormalized Choi matrix of the one-copy channel $`\Lambda_x`$, so $`C_x\ge0`$ and $`\operatorname{Tr}_{\mathrm{out}}C_x=I_D`$. Let $`|\Omega_d\rangle=\sum_{j=1}^d|j,j\rangle`$. Contracting the verifier input in the second moment gives the score operator
+Work in the standardized public basis and let $`C_x`$ be the unnormalized Choi matrix of the one-copy channel $`\Lambda_x`$, so $`C_x\ge0`$ and $`\mathop{\mathrm{Tr}}\nolimits _{\mathrm{out}}C_x=I_D`$. Let $`|\Omega_d\rangle=\sum_{j=1}^d|j,j\rangle`$. Contracting the verifier input in the second moment gives the score operator
 
 ```math
 R_x=\mathbb E_\rho\left[
@@ -208,13 +208,13 @@ R_x=\mathbb E_\rho\left[
 |\Omega_d\rangle\langle\Omega_d|}{D(D+1)}.
 ```
 
-Thus $`F=\sum_x\operatorname{Tr}(C_xR_x)`$. The identity term contributes $`D`$ for each $`x`$. The block $`\langle x|C_x|x\rangle_A`$ has trace $`d`$ and the Bell projector $`|\Omega_d\rangle\langle\Omega_d|`$ has largest eigenvalue $`d`$, so the second term is at most $`d^2`$ for an arbitrary channel. This bound is attained by measuring the training input: if its outcome equals the query, return its output register; otherwise return $`I_d/d`$.
+Thus $`F=\sum_x\mathop{\mathrm{Tr}}\nolimits (C_xR_x)`$. The identity term contributes $`D`$ for each $`x`$. The block $`\langle x|C_x|x\rangle_A`$ has trace $`d`$ and the Bell projector $`|\Omega_d\rangle\langle\Omega_d|`$ has largest eigenvalue $`d`$, so the second term is at most $`d^2`$ for an arbitrary channel. This bound is attained by measuring the training input: if its outcome equals the query, return its output register; otherwise return $`I_d/d`$.
 
 For a measure-and-prepare channel, the same block has the form $`\int E_{x,y}^T\otimes\sigma_{x,y}`$ with $`\int E_{x,y}=I_d`$. Its Bell contribution satisfies
 
 ```math
-\int\operatorname{Tr}(E_{x,y}\sigma_{x,y})
-\le\int\operatorname{Tr}E_{x,y}=d.
+\int\mathop{\mathrm{Tr}}\nolimits (E_{x,y}\sigma_{x,y})
+\le\int\mathop{\mathrm{Tr}}\nolimits E_{x,y}=d.
 ```
 
 It is attained by measuring the training output in a fixed computational basis and preparing the observed basis state. There are $`D/d`$ possible query strings. Substituting the contributions $`D+d^2`$ and $`D+d`$ gives the two formulas.

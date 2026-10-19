@@ -35,7 +35,7 @@ The project uses Dirac notation and explicit register names. The following trans
 | $`\mathcal L(\mathcal X)`$, $`\mathrm D(\mathcal X)`$ | The same operator and density-matrix spaces | Here the training input has dimension $`2^{Nk}`$ and the prediction has dimension $`2^m`$. |
 | $`\mu(y)`$ | $`E_y`$ or $`E_x(dy)`$ | A POVM effect acts jointly on all training copies. |
 | $`\eta(x)\in\mathrm{Pos}(\mathcal B)`$ | $`J_x\rho J_x^\dagger`$ | The branch probability is its trace; normalization occurs only on supported outcomes. |
-| $`F_{\mathrm W}(\rho,\sigma)=\lVert\sqrt\rho\sqrt\sigma\rVert_1`$ | Pure-target score $`\operatorname{Tr}(\rho_x\sigma)`$ | The project uses the square of Watrous's fidelity when the target is pure. |
+| $`F_{\mathrm W}(\rho,\sigma)=\lVert\sqrt\rho\sqrt\sigma\rVert_1`$ | Pure-target score $`\mathop{\mathrm{Tr}}\nolimits (\rho_x\sigma)`$ | The project uses the square of Watrous's fidelity when the target is pure. |
 | $`J(\Phi)\in\mathcal L(\mathcal Y\otimes\mathcal X)`$ | $`C_\Phi\in\mathcal L(\mathcal X\otimes\mathcal Y)`$ | Both Choi matrices are unnormalized; their tensor factors appear in the opposite order. |
 | $`\mathrm{Sep}(\mathcal Y:\mathcal X)`$ | Separable positive Choi operators | This is a cone, unlike the unit-trace state set $`\mathrm{SepD}`$. |
 
@@ -86,10 +86,10 @@ For [M02](MILESTONES.md#m02) and [M14](MILESTONES.md#m14), write the public meas
 \eta_\rho(x)=J_x\rho J_x^\dagger.
 ```
 
-The identities $`\sum_xJ_x^\dagger J_x=I`$ and $`\operatorname{Tr}\rho=1`$ make this a normalized classical-quantum state. Each nonzero block satisfies
+The identities $`\sum_xJ_x^\dagger J_x=I`$ and $`\mathop{\mathrm{Tr}}\nolimits \rho=1`$ make this a normalized classical-quantum state. Each nonzero block satisfies
 
 ```math
-p_\rho(x)=\operatorname{Tr}\eta_\rho(x),
+p_\rho(x)=\mathop{\mathrm{Tr}}\nolimits \eta_\rho(x),
 \qquad
 \rho_x=\frac{\eta_\rho(x)}{p_\rho(x)}.
 ```
@@ -97,10 +97,10 @@ p_\rho(x)=\operatorname{Tr}\eta_\rho(x),
 This is the project's specialization of the partial-measurement framework in Section 2.3.2. The normalized conditional state is nonlinear as a function of $`\rho`$, but the subnormalized branch map is linear. Keeping $`\eta_\rho(x)`$ intact is especially useful in moment and Choi calculations:
 
 ```math
-p_\rho(x)\operatorname{Tr}\!\left[
+p_\rho(x)\mathop{\mathrm{Tr}}\nolimits \!\left[
 \rho_x\Lambda_x(\rho^{\otimes k})\right]
 =
-\operatorname{Tr}\!\left[
+\mathop{\mathrm{Tr}}\nolimits \!\left[
 J_x\rho J_x^\dagger\Lambda_x(\rho^{\otimes k})\right].
 ```
 
@@ -123,7 +123,7 @@ A classical-description learner first measures, then prepares:
 
 ```math
 \Lambda_x(A)
-=\int \operatorname{Tr}[E_x(dy)A]\,\sigma_{x,y},
+=\int \mathop{\mathrm{Tr}}\nolimits [E_x(dy)A]\,\sigma_{x,y},
 \qquad
 \int E_x(dy)=I.
 ```
@@ -134,7 +134,7 @@ The reference-system criterion makes this distinction precise. In the finite-dim
 
 This cut is different from the split between measured and retained qubits **inside the source**. The classical learner can start with an entangled stabilizer source and make an entangled collective measurement across all copies. Its final $`m`$-qubit density matrix can itself be entangled across its output qubits. The restriction is the intervening classical description, not a separability condition on those physical states.
 
-Known preprocessing and postprocessing preserve the measure-and-prepare class. If $`\Lambda(A)=\sum_y\operatorname{Tr}(E_yA)\sigma_y`$, then preprocessing by a channel changes the effects by its adjoint, and postprocessing changes the prepared states. This observation is needed when the converse reveals a coordinate frame and transports a strategy to a graph or affine chart.
+Known preprocessing and postprocessing preserve the measure-and-prepare class. If $`\Lambda(A)=\sum_y\mathop{\mathrm{Tr}}\nolimits (E_yA)\sigma_y`$, then preprocessing by a channel changes the effects by its adjoint, and postprocessing changes the prepared states. This observation is needed when the converse reveals a coordinate frame and transports a strategy to a graph or affine chart.
 
 <a id="choi-one-copy"></a>
 ## 5. Choi normalization and the one-copy calculation
@@ -161,9 +161,9 @@ Theorems 2.22 and 2.26 give, in either tensor order,
 
 ```math
 C_\Lambda\ge0,\qquad
-\operatorname{Tr}_{\mathrm{out}}C_\Lambda=I_{\mathrm{in}},
+\mathop{\mathrm{Tr}}\nolimits _{\mathrm{out}}C_\Lambda=I_{\mathrm{in}},
 \qquad
-\operatorname{Tr}C_\Lambda=D_{\mathrm{in}}.
+\mathop{\mathrm{Tr}}\nolimits C_\Lambda=D_{\mathrm{in}}.
 ```
 
 Thus $`C_\Lambda`$ is not a density matrix. Dividing it by $`D_{\mathrm{in}}`$ would normalize its trace but would also change the partial-trace constraint and all score formulas.
@@ -172,11 +172,11 @@ The recovery identity, translated from Eq. (2.66), is
 
 ```math
 \Lambda(A)
-=\operatorname{Tr}_{\mathrm{in}}
+=\mathop{\mathrm{Tr}}\nolimits _{\mathrm{in}}
 [(A^{\mathsf T}\otimes I_{\mathrm{out}})C_\Lambda],
 \qquad
-\operatorname{Tr}[B\Lambda(A)]
-=\operatorname{Tr}[C_\Lambda(A^{\mathsf T}\otimes B)].
+\mathop{\mathrm{Tr}}\nolimits [B\Lambda(A)]
+=\mathop{\mathrm{Tr}}\nolimits [C_\Lambda(A^{\mathsf T}\otimes B)].
 ```
 
 The transpose is an algebraic part of this representation; no physical transpose of an unknown input is required.
@@ -202,7 +202,7 @@ R_x
 |\Omega_d\rangle=\sum_{j=1}^d|j,j\rangle.
 ```
 
-The mean score is $`\sum_x\operatorname{Tr}(C_xR_x)`$. Here $`\|\Omega_d\|^2=d`$, so $`|\Omega_d\rangle\langle\Omega_d|`$ has largest eigenvalue $`d`$. The channel constraint forces the relevant $`x`$ block of $`C_x`$ to have trace $`d`$. Its Bell contribution is therefore at most $`d^2`$ for general channels.
+The mean score is $`\sum_x\mathop{\mathrm{Tr}}\nolimits (C_xR_x)`$. Here $`\|\Omega_d\|^2=d`$, so $`|\Omega_d\rangle\langle\Omega_d|`$ has largest eigenvalue $`d`$. The channel constraint forces the relevant $`x`$ block of $`C_x`$ to have trace $`d`$. Its Bell contribution is therefore at most $`d^2`$ for general channels.
 
 For a measure-and-prepare channel,
 
@@ -210,7 +210,7 @@ For a measure-and-prepare channel,
 C_x=\int E_x(dy)^{\mathsf T}\otimes\sigma_{x,y}.
 ```
 
-Within the same $`x`$ block, the Bell pairing becomes a sum of $`\operatorname{Tr}(E_y\sigma_y)`$ terms, bounded in total by $`d`$. These two different feasible sets produce
+Within the same $`x`$ block, the Bell pairing becomes a sum of $`\mathop{\mathrm{Tr}}\nolimits (E_y\sigma_y)`$ terms, bounded in total by $`d`$. These two different feasible sets produce
 
 ```math
 F_{\mathrm{EB}}^{\mathrm{av}}(N,m,1)
@@ -241,8 +241,8 @@ Once a sector is established, Watrous's ensemble-discrimination language becomes
 
 ```math
 P_{\mathrm{id}}
-=\frac1M\sum_\theta\operatorname{Tr}(E_\theta\omega_\theta)
-\le\frac1M\sum_\theta\operatorname{Tr}(E_\theta\Pi)
+=\frac1M\sum_\theta\mathop{\mathrm{Tr}}\nolimits (E_\theta\omega_\theta)
+\le\frac1M\sum_\theta\mathop{\mathrm{Tr}}\nolimits (E_\theta\Pi)
 =\frac qM.
 ```
 
@@ -263,7 +263,7 @@ Now fix any reported density matrix $`\sigma`$. For a threshold $`\eta>0`$, cons
 
 ```math
 \mathcal H_\sigma
-=\{\theta:\operatorname{Tr}(\sigma\tau_\theta)\ge\eta\}.
+=\{\theta:\mathop{\mathrm{Tr}}\nolimits (\sigma\tau_\theta)\ge\eta\}.
 ```
 
 Select pure-state vectors $`v_1,\ldots,v_L`$ for targets in this set with graph matrices far apart in rank. The graph-state overlap calculation gives an upper bound $`\varepsilon`$ on the **amplitude** $`|\langle v_i|v_j\rangle|`$ for distinct selected targets. Squared overlaps must be square-rooted at this step.
@@ -276,11 +276,11 @@ Let $`V`$ have columns $`v_j`$. Its complex Gram matrix is $`H=V^\dagger V`$, wh
 \le1+(L-1)\varepsilon.
 ```
 
-Here the norm on $`H`$ is the spectral operator norm; the row sum is an upper bound for it. Positivity and $`\operatorname{Tr}\sigma=1`$ then imply
+Here the norm on $`H`$ is the spectral operator norm; the row sum is an upper bound for it. Positivity and $`\mathop{\mathrm{Tr}}\nolimits \sigma=1`$ then imply
 
 ```math
 L\eta
-\le\operatorname{Tr}\!\left[
+\le\mathop{\mathrm{Tr}}\nolimits \!\left[
 \sigma\sum_j|v_j\rangle\langle v_j|\right]
 \le1+(L-1)\varepsilon.
 ```
@@ -316,7 +316,7 @@ Given training outcomes $`x_1,\ldots,x_k`$ and the supplied query $`x`$, it sele
 ```math
 \sum_i c_ix_i=x,
 \qquad
-\operatorname{wt}(c)\equiv1\pmod4.
+\mathop{\mathrm{wt}}\nolimits (c)\equiv1\pmod4.
 ```
 
 In particular, $`\sum_i c_i=1`$, so affinity yields $`\sum_i c_if(x_i)=f(x)`$. The selected output states can then be combined by the [Bu–Gu–Jaffe convolution](../references/RELATED_WORK.md#BuGuJaffe2025):
@@ -393,9 +393,9 @@ A SWAP measurement on prediction $`\sigma`$ and withheld target $`\rho_x`$ uses 
 
 ```math
 P_{\mathrm{swap}}
-=\operatorname{Tr}\!\left[
+=\mathop{\mathrm{Tr}}\nolimits \!\left[
 \frac{I+S}{2}(\sigma\otimes\rho_x)\right]
-=\frac{1+\operatorname{Tr}(\sigma\rho_x)}2.
+=\frac{1+\mathop{\mathrm{Tr}}\nolimits (\sigma\rho_x)}2.
 ```
 
 Averaging gives $`(1+F_\rho)/2`$, not $`F_\rho`$. Each trial consumes the learner's output and a verifier branch, and uses $`k+1`$ source preparations before any additional repetitions. The [resource interpretation](../science/interpretation.md) specifies the guarantee being tested and the [verification account](../verification/README.md) explains the scope of the finite checks.

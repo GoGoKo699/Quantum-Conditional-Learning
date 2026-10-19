@@ -12,7 +12,7 @@ The single educational anchor is **John Watrous, [The Theory of Quantum Informat
 
 Throughout the map, $`N`$ is the number of source qubits, $`m`$ the number of surviving output qubits, $`n=N-m`$ the number of independent public commuting measurement constraints, and $`k`$ the number of training preparations. The independent verifier preparation is additional to $`k`$.
 
-The project scores the overlap $`\operatorname{Tr}(\sigma\rho_x)`$ with a pure conditional target. Watrous's fidelity is unsquared, so this overlap equals $`F_{\mathrm W}(\sigma,\rho_x)^2`$. The project uses input–output order for its Choi matrices; Watrous uses output–input order. These conventions are addressed explicitly in M04, M05, and M15.
+The project scores the overlap $`\mathop{\mathrm{Tr}}\nolimits (\sigma\rho_x)`$ with a pure conditional target. Watrous's fidelity is unsquared, so this overlap equals $`F_{\mathrm W}(\sigma,\rho_x)^2`$. The project uses input–output order for its Choi matrices; Watrous uses output–input order. These conventions are addressed explicitly in M04, M05, and M15.
 
 ## Map at a glance
 
@@ -43,7 +43,7 @@ The project scores the overlap $`\operatorname{Tr}(\sigma\rho_x)`$ with a pure c
 
 **Central question.** What mathematical object describes an unknown quantum specimen, and what can a measurement reveal about it?
 
-**Understanding target.** Interpret a density operator as positive and unit trace, a pure state as a rank-one projector, and $`\operatorname{Tr}(E\rho)`$ as a measurement probability when $`0\le E\le I`$. Relate tensor products to independently prepared specimens of the same source. Distinguish physical possession of $`\rho`$ from possession of a classical matrix or a preparation circuit specifying it.
+**Understanding target.** Interpret a density operator as positive and unit trace, a pure state as a rank-one projector, and $`\mathop{\mathrm{Tr}}\nolimits (E\rho)`$ as a measurement probability when $`0\le E\le I`$. Relate tensor products to independently prepared specimens of the same source. Distinguish physical possession of $`\rho`$ from possession of a classical matrix or a preparation circuit specifying it.
 
 **Dependencies and story role.** This is the starting point. It introduces the local objects whose preparation count and eventual output form define the project.
 
@@ -57,7 +57,7 @@ The project scores the overlap $`\operatorname{Tr}(\sigma\rho_x)`$ with a pure c
 
 **Central question.** How does measuring one part of a specimen define the state of the surviving part?
 
-**Understanding target.** Separate a marginal state obtained by forgetting an outcome from a conditional state obtained by retaining it. For a branch map $`J_x`$, identify its probability $`p_\rho(x)=\operatorname{Tr}(J_x\rho J_x^\dagger)`$ and normalize the supported branch as $`\rho_x=J_x\rho J_x^\dagger/p_\rho(x)`$. Unsupported outcomes have zero score weight. Explain why a rank-one measurement on the input of a pure source leaves a pure surviving state.
+**Understanding target.** Separate a marginal state obtained by forgetting an outcome from a conditional state obtained by retaining it. For a branch map $`J_x`$, identify its probability $`p_\rho(x)=\mathop{\mathrm{Tr}}\nolimits (J_x\rho J_x^\dagger)`$ and normalize the supported branch as $`\rho_x=J_x\rho J_x^\dagger/p_\rho(x)`$. Unsupported outcomes have zero score weight. Explain why a rank-one measurement on the input of a pure source leaves a pure surviving state.
 
 **Dependencies and story role.** Builds on [M01](#m01). It turns a global specimen into the query-and-target pair used in the experiment.
 
@@ -85,7 +85,7 @@ The project scores the overlap $`\operatorname{Tr}(\sigma\rho_x)`$ with a pure c
 
 **Central question.** Which restriction on a channel expresses the requirement that its prediction be prepared from a classical description?
 
-**Understanding target.** Translate between a channel and its positive Choi matrix with the appropriate partial-trace constraint. Recognize measure-and-prepare channels of the form $`\Lambda_x(A)=\int\operatorname{Tr}[E_x(dy)A]\sigma_{x,y}`$ as entanglement breaking. The effects form any collective POVM, and each report may specify any mixed density matrix with unrestricted length, precision, and preparation complexity.
+**Understanding target.** Translate between a channel and its positive Choi matrix with the appropriate partial-trace constraint. Recognize measure-and-prepare channels of the form $`\Lambda_x(A)=\int\mathop{\mathrm{Tr}}\nolimits [E_x(dy)A]\sigma_{x,y}`$ as entanglement breaking. The effects form any collective POVM, and each report may specify any mixed density matrix with unrestricted length, precision, and preparation complexity.
 
 **Dependencies and story role.** Uses [M03](#m03). It isolates the exact output restriction that the main comparison studies.
 
@@ -99,7 +99,7 @@ The project scores the overlap $`\operatorname{Tr}(\sigma\rho_x)`$ with a pure c
 
 **Central question.** How does the prediction score relate to an experimentally observable comparison?
 
-**Understanding target.** For pure $`\rho_x`$, connect the overlap $`\operatorname{Tr}(\sigma\rho_x)`$ to squared fidelity. Distinguish it from Watrous's unsquared $`F_{\mathrm W}`$. Derive the SWAP acceptance $`(1+F)/2`$ and the rescaled statistic $`2A-1`$, whose expectation is the mean overlap. Identify the baseline $`2^{-m}`$ obtained by the maximally mixed prediction.
+**Understanding target.** For pure $`\rho_x`$, connect the overlap $`\mathop{\mathrm{Tr}}\nolimits (\sigma\rho_x)`$ to squared fidelity. Distinguish it from Watrous's unsquared $`F_{\mathrm W}`$. Derive the SWAP acceptance $`(1+F)/2`$ and the rescaled statistic $`2A-1`$, whose expectation is the mean overlap. Identify the baseline $`2^{-m}`$ obtained by the maximally mixed prediction.
 
 **Dependencies and story role.** Uses [M01](#m01) and [M02](#m02). It attaches a common operational score to the two channel classes.
 
@@ -407,11 +407,11 @@ Average the affine bound with residual input size $`n-t`$ and recover the sharpe
 
 **Central question.** How strongly does a copy deficit restrict the output characters attainable within a nuisance block?
 
-**Understanding target.** From the full Gram matrix's rank at most $`k`$, eliminate a nonsingular part of $`G`$ and derive $`\operatorname{rank}(Q-Q_0)\le k-\operatorname{rank}G`$. Retain possible residual cross terms $`H_0\ne0`$. Count low-rank symmetric matrices and divide by the $`2^{m(m+1)/2}`$ possible graph targets to bound exact identification.
+**Understanding target.** From the full Gram matrix's rank at most $`k`$, eliminate a nonsingular part of $`G`$ and derive $`\mathop{\mathrm{rank}}\nolimits (Q-Q_0)\le k-\mathop{\mathrm{rank}}\nolimits G`$. Retain possible residual cross terms $`H_0\ne0`$. Count low-rank symmetric matrices and divide by the $`2^{m(m+1)/2}`$ possible graph targets to bound exact identification.
 
 **Dependencies and story role.** Uses [M07](#m07), [M12](#m12), and [M24](#m24). It obtains the quadratic copy-deficit exponent that will withstand conversion to approximate descriptions.
 
-**Conceptual connection.** Pad the learner to $`K=\max\{k,n\}`$ copies, use $`\mathbb E2^{\operatorname{null}G}\le3`$, and give bad blocks total weight at most $`3\,2^{-s}`$. With $`d=N-K-s>0`$, every good block has exact success at most $`4(m+1)2^{-d(d+1)/2}`$. Dimension bounds apply to the actual symmetric target characters.
+**Conceptual connection.** Pad the learner to $`K=\max\{k,n\}`$ copies, use $`\mathbb E2^{\mathop{\mathrm{null}}\nolimits G}\le3`$, and give bad blocks total weight at most $`3\,2^{-s}`$. With $`d=N-K-s>0`$, every good block has exact success at most $`4(m+1)2^{-d(d+1)/2}`$. Dimension bounds apply to the actual symmetric target characters.
 
 **Source pointers.** Watrous §3.1.2 for the discrimination step, through the [bridge](WATROUS_BRIDGE.md); the rank and probability arguments are supplied in [rank completion](../science/classical_converse.md#5-rank-completion-and-the-number-of-possible-target-characters) and [Gram nullity](../science/classical_converse.md#6-the-probability-of-a-large-gram-nullity).
 
@@ -421,7 +421,7 @@ Average the affine bound with residual input size $`n-t`$ and recover the sharpe
 
 **Central question.** Why does hardness of exact graph identification obstruct every high-fidelity mixed-state description?
 
-**Understanding target.** For any density matrix $`\sigma`$, form its set of graph targets with overlap at least $`\eta`$. Use graph-state squared overlaps $`0`$ or $`2^{-\operatorname{rank}(C-C')}`$ to select anchors separated by graph-rank distance greater than a cutoff $`D`$. Their overlap amplitudes are at most $`2^{-D/2}`$. If this is at most $`\eta/2`$, the Gram bound allows at most $`2/\eta`$ anchors. Cover the remaining targets by rank-distance neighborhoods, including every sign vector, to obtain the list bound $`L_m(\eta,D)`$ for arbitrary mixed $`\sigma`$.
+**Understanding target.** For any density matrix $`\sigma`$, form its set of graph targets with overlap at least $`\eta`$. Use graph-state squared overlaps $`0`$ or $`2^{-\mathop{\mathrm{rank}}\nolimits (C-C')}`$ to select anchors separated by graph-rank distance greater than a cutoff $`D`$. Their overlap amplitudes are at most $`2^{-D/2}`$. If this is at most $`\eta/2`$, the Gram bound allows at most $`2/\eta`$ anchors. Cover the remaining targets by rank-distance neighborhoods, including every sign vector, to obtain the list bound $`L_m(\eta,D)`$ for arbitrary mixed $`\sigma`$.
 
 **Dependencies and story role.** Uses [M04](#m04), [M05](#m05), [M07](#m07), and [M25](#m25). It removes any restriction to exact, pure, or stabilizer-valued reports.
 
@@ -453,7 +453,7 @@ Average the affine bound with residual input size $`n-t`$ and recover the sharpe
 
 **Dependencies and story role.** Uses [M19](#m19), [M23](#m23), and [M27](#m27). It joins the proof mechanisms into one copy frontier.
 
-**Conceptual connection.** Typical full-support sources assign probability $`2^{-n}`$ to a designated branch. Coherent label combination avoids waiting for that branch. Exact-match rejection sampling costs $`2^n`$ on average, while the optimal classical-description cost is linear. When $`m=o(N)`$, the quantum lower bound already gives leading rate one above the baseline.
+**Conceptual connection.** Typical full-support sources assign probability $`2^{-n}`$ to a designated branch. Coherent label combination avoids waiting for that branch. Exact-match rejection sampling costs $`2^n`$ on average, while the optimal classical-description cost is linear. When $`m=o(N)`$, the quantum lower bound already gives leading rate one for a fixed positive fidelity advantage above the baseline; a positive but vanishing advantage need not require this rate.
 
 **Source pointers.** Watrous §§1.2.2 and 3.1.2 as statistical foundations, through the [bridge](WATROUS_BRIDGE.md). Project: [joint frontier](../science/model.md#7-resulting-copy-frontier), [growing-conditioning example](../science/interpretation.md#3-a-growing-conditioning-record-with-a-growing-copy-advantage).
 
@@ -463,7 +463,7 @@ Average the affine bound with residual input size $`n-t`$ and recover the sharpe
 
 **Central question.** What resources are needed to realize and verify the copy advantage?
 
-**Understanding target.** Account for $`k`$ full $`N`$-qubit training preparations, $`km`$ retained output qubits, $`kn`$ recorded bits, public Clifford standardization, polynomial classical selection, and $`2m(q-1)`$ CNOTs for mixing $`q=\operatorname{wt}(c)`$ selected blocks. Add one independent verifier preparation and the SWAP-comparison resources. Repeating a scored trial $`T`$ times uses $`T(k+1)`$ source preparations.
+**Understanding target.** Account for $`k`$ full $`N`$-qubit training preparations, $`km`$ retained output qubits, $`kn`$ recorded bits, public Clifford standardization, polynomial classical selection, and $`2m(q-1)`$ CNOTs for mixing $`q=\mathop{\mathrm{wt}}\nolimits (c)`$ selected blocks. Add one independent verifier preparation and the SWAP-comparison resources. Repeating a scored trial $`T`$ times uses $`T(k+1)`$ source preparations.
 
 **Dependencies and story role.** Uses [M05](#m05), [M19](#m19), and [M28](#m28). It translates the copy frontier into the complete physical setting and its evidence boundaries.
 

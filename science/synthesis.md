@@ -23,10 +23,10 @@ A Clifford $`U`$ maps the computational $`Z`$ basis to the joint eigenbasis of t
 
 ## 2. The imported quantum convolution
 
-Let $`K`$ be odd. For each coordinate of $`K`$ output blocks, apply the following two layers in the stated order:
+Let $`K`$ be odd. For each coordinate of $`K`$ output blocks, apply the following two CNOT sweeps in the stated order:
 
-1. $`\operatorname{CNOT}_{1\to i}`$ for $`i=2,\ldots,K`$.
-2. $`\operatorname{CNOT}_{i\to1}`$ for $`i=2,\ldots,K`$.
+1. $`\mathop{\mathrm{CNOT}}\nolimits _{1\to i}`$ for $`i=2,\ldots,K`$.
+2. $`\mathop{\mathrm{CNOT}}\nolimits _{i\to1}`$ for $`i=2,\ldots,K`$.
 
 The resulting permutation unitary $`V_K`$ acts on computational strings by
 
@@ -67,10 +67,10 @@ Measure the public input register on every training copy. Store its outcome $`x_
 ```math
 \sum_{i=1}^kc_i x_i=x,
 \qquad
-\operatorname{wt}(c)\equiv1\pmod4.
+\mathop{\mathrm{wt}}\nolimits (c)\equiv1\pmod4.
 ```
 
-If no such vector exists, return $`I/2^m`$ and a failure flag. Otherwise select the $`K=\operatorname{wt}(c)`$ blocks with $`c_i=1`$, apply $`\mathcal B_K`$, and return its first output with a success flag.
+If no such vector exists, return $`I/2^m`$ and a failure flag. Otherwise select the $`K=\mathop{\mathrm{wt}}\nolimits (c)`$ blocks with $`c_i=1`$, apply $`\mathcal B_K`$, and return its first output with a success flag.
 
 The parity condition gives $`\sum_i c_i=1`$. By Lemma 1 and affinity,
 
@@ -88,7 +88,7 @@ Let
 
 ```math
 \mathcal A_k=
-\{c\in\mathbb F_2^k:\operatorname{wt}(c)\equiv1\pmod4\}.
+\{c\in\mathbb F_2^k:\mathop{\mathrm{wt}}\nolimits (c)\equiv1\pmod4\}.
 ```
 
 A roots-of-unity filter on the binomial expansion gives
@@ -112,14 +112,14 @@ Writing $`Y=\sum_c I_c`$, one obtains
 ```math
 \mathbb E Y=|\mathcal A_k|2^{-r},
 \qquad
-\operatorname{Var}Y=|\mathcal A_k|2^{-r}(1-2^{-r}).
+\mathop{\mathrm{Var}}\nolimits Y=|\mathcal A_k|2^{-r}(1-2^{-r}).
 ```
 
 Chebyshev's inequality at $`Y=0`$ yields
 
 ```math
 \Pr(Y=0)
-\le\frac{\operatorname{Var}Y}{(\mathbb E Y)^2}
+\le\frac{\mathop{\mathrm{Var}}\nolimits Y}{(\mathbb E Y)^2}
 =\frac{2^r-1}{|\mathcal A_k|}
 \le2^{n-k+3}.
 ```
@@ -144,7 +144,7 @@ On an odd-weight binary vector, the identity
 
 ```math
 \sum_{i<j}c_ic_j
-=\binom{\operatorname{wt}(c)}2\pmod2
+=\binom{\mathop{\mathrm{wt}}\nolimits (c)}2\pmod2
 ```
 
 shows that weight $`1\pmod4`$ is equivalent to
@@ -167,7 +167,7 @@ The retained blocks are data consumed by the task. On a success branch the proto
 
 ## 7. Alternative copy symmetry and scope
 
-An alternative proof uses [Gross–Nezami–Walter's stochastic-orthogonal copy symmetries](../references/RELATED_WORK.md#GrossNezamiWalter2021). If a selector $`c`$ of weight $`1\pmod4`$ has a zero coordinate $`j`$, set $`v=c+e_j`$ and $`O=I+vv^T`$. Since $`\operatorname{wt}(v)\equiv2\pmod4`$, this binary matrix fixes the all-ones vector and preserves the quadratic weight form modulo four. Its $`j`$th row is $`c`$. The associated permutation across copies commutes with every Clifford tensor power and extracts the desired affine label.
+An alternative proof uses [Gross–Nezami–Walter's stochastic-orthogonal copy symmetries](../references/RELATED_WORK.md#GrossNezamiWalter2021). If a selector $`c`$ of weight $`1\pmod4`$ has a zero coordinate $`j`$, set $`v=c+e_j`$ and $`O=I+vv^T`$. Since $`\mathop{\mathrm{wt}}\nolimits (v)\equiv2\pmod4`$, this binary matrix fixes the all-ones vector and preserves the quadratic weight form modulo four. Its $`j`$th row is $`c`$. The associated permutation across copies commutes with every Clifford tensor power and extracts the desired affine label.
 
 The [finite physical checks](../verification/README.md) include this alternative, with nonpermutation combinations and complex stabilizer states. The commutation statement has no requirement that $`m\ge k-1`$; a size condition in the Clifford commutant literature concerns linear independence of a spanning family, a different statement.
 

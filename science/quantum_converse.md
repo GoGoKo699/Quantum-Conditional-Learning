@@ -14,7 +14,7 @@ Fix an isotropic subspace $`W\subseteq V_N`$ of dimension $`n`$, independently o
 
 ```math
 J_x=(\langle x|\otimes I_m)C_W,\qquad
-p_\rho(x)=\operatorname{Tr}(J_x\rho J_x^\dagger),\qquad
+p_\rho(x)=\mathop{\mathrm{Tr}}\nolimits (J_x\rho J_x^\dagger),\qquad
 \rho_x=\frac{J_x\rho J_x^\dagger}{p_\rho(x)}
 ```
 
@@ -27,7 +27,7 @@ F_Q^{\mathrm{av}}(N,m,k;W)
 =\sup_{\{\Lambda_x\}}
 \frac1{|\mathcal S_N|}
 \sum_{\rho\in\mathcal S_N}\sum_x p_\rho(x)
-\operatorname{Tr}\!\left[\rho_x\Lambda_x(\rho^{\otimes k})\right].
+\mathop{\mathrm{Tr}}\nolimits \!\left[\rho_x\Lambda_x(\rho^{\otimes k})\right].
 ```
 
 The score is the overlap with a pure conditional target. Unsupported outcomes have weight zero. It is distinct from the acceptance probability of a SWAP comparison, which is $`(1+F)/2`$.
@@ -92,13 +92,13 @@ Every syntactically admissible report also specifies a conditional output state 
 First take $`W`$ to be input $`Z`$ measurement on $`n`$ qubits. Choose independently and uniformly
 
 ```math
-A\in\operatorname{Alt}_n(\mathbb F_2),\qquad
+A\in\mathop{\mathrm{Alt}}\nolimits _n(\mathbb F_2),\qquad
 a\in\mathbb F_2^n,\qquad
 S\in\mathbb F_2^{n\times m},\qquad
 b\in\mathbb F_2^m,
 ```
 
-where $`\operatorname{Alt}_n(\mathbb F_2)`$ denotes symmetric binary matrices with zero diagonal. Define
+where $`\mathop{\mathrm{Alt}}\nolimits _n(\mathbb F_2)`$ denotes symmetric binary matrices with zero diagonal. Define
 
 ```math
 q_A(u)=\sum_{i<j}A_{ij}u_i u_j,
@@ -137,7 +137,7 @@ Because every input outcome has positive uniform probability, $`L\cap W=0`$. Non
 For any density matrix $`\sigma_u`$ supplied by the learner,
 
 ```math
-\operatorname{Tr}(|y_u\rangle\langle y_u|\sigma_u)
+\mathop{\mathrm{Tr}}\nolimits (|y_u\rangle\langle y_u|\sigma_u)
 =\Pr[\text{computational-basis measurement of }\sigma_u\text{ returns }y_u].
 ```
 
@@ -202,7 +202,7 @@ Quadratic-phase averaging and the binary Gram/orthogonal-orbit relation are esta
 
 ## 4. What a full-row-rank sector reveals
 
-Suppose $`0\le k\le n`$. Call a matrix $`X`$ good when $`\operatorname{rank}X=k`$.
+Suppose $`0\le k\le n`$. Call a matrix $`X`$ good when $`\mathop{\mathrm{rank}}\nolimits X=k`$.
 
 **Lemma 3 — a good Gram fiber is a free orthogonal orbit.** If $`X`$ has full row rank and $`X'^TX'=X^TX`$, then $`X'`$ also has full row rank and there is a unique invertible $`O\in\mathbb F_2^{k\times k}`$ satisfying
 
@@ -213,12 +213,12 @@ X'=OX,\qquad O^TO=I,\qquad O\mathbf1_k=\mathbf1_k.
 **Proof.** The map $`X:\mathbb F_2^n\to\mathbb F_2^k`$ is surjective and $`X^T`$ is injective. Hence
 
 ```math
-\operatorname{rank}(X^TX)=k,
+\mathop{\mathrm{rank}}\nolimits (X^TX)=k,
 \qquad
 \ker(X^TX)=\ker X.
 ```
 
-The equal Gram matrix forces $`\operatorname{rank}X'=k`$, and its kernel is also $`\ker X`$. Thus there is a unique invertible map $`O`$ on the common $`k`$-dimensional quotient with $`X'=OX`$. The Gram equality gives
+The equal Gram matrix forces $`\mathop{\mathrm{rank}}\nolimits X'=k`$, and its kernel is also $`\ker X`$. Thus there is a unique invertible map $`O`$ on the common $`k`$-dimensional quotient with $`X'=OX`$. The Gram equality gives
 
 ```math
 X^T(O^TO-I)X=0.
@@ -489,7 +489,7 @@ Indeed, transversality gives a unique generating matrix with Pauli labels $`(e_i
 Reveal the diagonal $`d_i=\Gamma_{ii}`$ and undo its known single-qubit phase gates. The remaining off-diagonal coefficients and the signs remain independent and uniform. Write
 
 ```math
-\Gamma-\operatorname{diag}(d)
+\Gamma-\mathop{\mathrm{diag}}\nolimits (d)
 =
 \begin{bmatrix}
 A&S\\ S^T&C
@@ -555,11 +555,11 @@ p_\rho(x)=p_{\widetilde\rho}(u),
 and therefore
 
 ```math
-\operatorname{Tr}\!\left[
+\mathop{\mathrm{Tr}}\nolimits \!\left[
 \rho_x\Lambda_x(\rho^{\otimes k})
 \right]
 =
-\operatorname{Tr}\!\left[
+\mathop{\mathrm{Tr}}\nolimits \!\left[
 \widetilde\rho_u
 \widetilde\Lambda_{g,u}(\widetilde\rho^{\otimes k})
 \right].
@@ -571,8 +571,8 @@ For completeness, in the original verification task, commutation of the report a
 
 ```math
 \sum_x p_\rho(x)
-\operatorname{Tr}(\rho_x\tau_{K,\eta,x})
-=\operatorname{Tr}(\Pi_{K,\eta}\rho),
+\mathop{\mathrm{Tr}}\nolimits (\rho_x\tau_{K,\eta,x})
+=\mathop{\mathrm{Tr}}\nolimits (\Pi_{K,\eta}\rho),
 ```
 
 where $`\tau_{K,\eta,x}`$ is the report's known pure branch state. This equality is an outcome-averaged identity. Individual branch scores need not be independent of $`x`$.
@@ -663,7 +663,7 @@ Every zero-copy strategy consists of fixed density matrices $`\sigma_x`$. Its av
 
 ```math
 \sum_{x\in\mathbb F_2^n}
-\operatorname{Tr}\!\left(\sigma_x\frac{I_m}{2^N}\right)
+\mathop{\mathrm{Tr}}\nolimits \!\left(\sigma_x\frac{I_m}{2^N}\right)
 =2^{-m}.
 ```
 

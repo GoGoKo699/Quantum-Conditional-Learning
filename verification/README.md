@@ -53,7 +53,7 @@ The checks cover the full-row-rank Gram criterion, orthogonal orbit reconstructi
 
 ### Quotient and frame incidence
 
-The cases $`(p,N,m)=(2,3,1),(2,3,2),(3,2,1)`$ exhaustively enumerate the relevant Lagrangians, frames, and admissible report subspaces. They check the incidence degree, quotient transversality, report injectivity, and equivalence of exact report validity before and after quotienting. The intersection moment is checked with rational arithmetic.
+The cases $`(p,N,m)=(2,3,1),(2,3,2),(3,2,1)`$ exhaustively enumerate the relevant Lagrangians, frames, and admissible report subspaces. They check the incidence degree, quotient transversality, report injectivity, and equivalence of unsigned report-subspace containment before and after quotienting. The intersection moment is checked with rational arithmetic. The written [signed quotient proof](../science/quantum_converse.md#6-resolving-every-intersection-with-the-public-measurement) and [output-channel transport proof](../science/quantum_converse.md#8-transporting-arbitrary-conditional-quantum-outputs) cover the additional statements not tested by this enumeration.
 
 The stored output contains 135, 135, and 40 Lagrangians and respectively 1,620, 8,100, and 480 report-pair checks.
 

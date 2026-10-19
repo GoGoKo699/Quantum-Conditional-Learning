@@ -17,7 +17,7 @@ The verifier's conditional quantum system stays with the verifier. Giving it to 
 | Storage before the query | Arbitrary quantum storage is allowed | Arbitrary quantum storage is allowed |
 | Processing after the query | An arbitrary quantum channel | An arbitrary collective POVM and classical processing |
 | Final prediction | One $`m`$-qubit state | Any described density matrix, subsequently prepared |
-| Score | $`\operatorname{Tr}(\sigma\rho_x)`$ | The same score |
+| Score | $`\mathop{\mathrm{Tr}}\nolimits (\sigma\rho_x)`$ | The same score |
 
 The classical-description comparator is an entanglement-breaking, or measure-and-prepare, channel from the training systems to the output, for each fixed $`x`$. It has no bound on description length, precision, computation, or state-preparation complexity. It may describe a mixed state and need not report a stabilizer. In particular, this comparator can itself use a quantum computer and coherent quantum memory before its final measurement.
 
@@ -103,7 +103,7 @@ Measure the public constraints on each training copy, record the outcomes $`x_1,
 
 ```math
 \sum_i c_i x_i=x,\qquad
-\operatorname{wt}(c)\equiv1\pmod4.
+\mathop{\mathrm{wt}}\nolimits (c)\equiv1\pmod4.
 ```
 
 The odd coefficient sum preserves the affine label relation. The stronger weight congruence makes the selected-copy convolution covariant under the same unknown Clifford, including its phase gates. Applying this convolution to the selected outputs gives exactly the requested branch. The convolution and its covariance are established primitives from [Bu–Gu–Jaffe](../references/RELATED_WORK.md#BuGuJaffe2025); the [synthesis proof](synthesis.md) supplies the outcome-selection guarantee, polynomial coefficient search, and explicit circuit.
@@ -124,7 +124,7 @@ The following counts describe the constructive quantum learner. They use an unre
 | Retained training outputs | $`km`$ coherent qubits until the query, together with $`kn`$ recorded outcome bits |
 | Query | $`n`$ classical outcome bits from the verifier; only $`r\le n`$ may be independent for a particular source |
 | Classical selection | Binary Gaussian elimination and a quadratic Boolean equation, using polynomial time and explicit classical matrix storage |
-| Quantum mixing | For $`q=\operatorname{wt}(c)\equiv1\pmod4`$ selected blocks, exactly $`2m(q-1)`$ CNOTs, at most $`2m(k-1)`$ |
+| Quantum mixing | For $`q=\mathop{\mathrm{wt}}\nolimits (c)\equiv1\pmod4`$ selected blocks, exactly $`2m(q-1)`$ CNOTs, at most $`2m(k-1)`$ |
 | Mixing depth and ancillas | A direct depth $`2(q-1)`$ with the $`m`$ coordinates in parallel and the required connections; no added synthesis ancillas |
 | Prediction | One unknown $`m`$-qubit specimen |
 
@@ -139,7 +139,7 @@ The procedure uses no QRAM, no amplitude-encoding access to a classical dataset,
 The mathematical score is
 
 ```math
-F=\mathbb E\,\operatorname{Tr}(\sigma\rho_x).
+F=\mathbb E\,\mathop{\mathrm{Tr}}\nolimits (\sigma\rho_x).
 ```
 
 If the verifier has one unknown target specimen and one predicted specimen, an ordinary SWAP test accepts with probability
